@@ -6,15 +6,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import ui.components.LoginFormComponent
+import ui.components.setup.LoginFormComponent
 import ui.components.MainScreenComponent
+import ui.screens.SetupStepsScreen
 
 @Composable
 @Preview
 fun app() {
     MaterialTheme {
-        generateLoginPage()
+        //generateLoginPage()
         //generateMainScreen()
+        SetupStepsScreen().firstSetupScreen()
     }
 }
 

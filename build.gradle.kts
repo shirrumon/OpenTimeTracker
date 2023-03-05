@@ -29,6 +29,7 @@ kotlin {
             dependencies {
                 implementation(compose.desktop.currentOs)
                 implementation("androidx.compose.material3:material3:$material3_version")
+                implementation("androidx.compose.material3:material3-window-size-class:$material3_version")
             }
         }
         val jvmTest by getting
