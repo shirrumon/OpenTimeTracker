@@ -3,6 +3,7 @@ package ui.components.setup
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
+import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.*
@@ -33,7 +34,11 @@ class LoginFormComponent {
                         .padding(top = 35.dp)
                 ) {
                     Text("OpenTime", fontSize = 36.sp)
-                    Text("Tracker", fontSize = 36.sp, color = Color("#A571F8".removePrefix("#").toLong(16) or 0x00000000FF000000))
+                    Text(
+                        "Tracker",
+                        fontSize = 36.sp,
+                        color = Color("#A571F8".removePrefix("#").toLong(16) or 0x00000000FF000000)
+                    )
                 }
 
                 Column(
@@ -51,18 +56,28 @@ class LoginFormComponent {
             }
 
             Column(
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .width(373.dp)
                     .fillMaxHeight()
             ) {
-                Column{
-
+                Column {
+                    Column(
+                        modifier = Modifier
+                            .padding(top = 35.dp)
+                    ) {
+                        Text("Setup master", fontSize = 28.sp)
+                        Text(
+                            "Please select the mode of the application.\u2028You can connect to a remote server or use local tracking by logging into your Atlassian account. You can always change the mode later into application settings.",
+                            fontSize = 16.sp,
+                            modifier = Modifier
+                                .padding(top = 20.dp)
+                        )
+                    }
                 }
             }
         }
     }
+
     @Composable
     private fun getClockImage() = painterResource("images/clock.png")
 }
