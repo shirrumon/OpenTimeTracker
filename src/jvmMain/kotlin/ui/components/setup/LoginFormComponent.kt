@@ -1,5 +1,6 @@
 package ui.components.setup
 
+import State.Companion.globalState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -72,6 +73,14 @@ class LoginFormComponent {
                             modifier = Modifier
                                 .padding(top = 20.dp)
                         )
+                    }
+
+                    Column {
+                        Button(onClick = {
+                            globalState.value = "step2"
+                        }) {
+                            Text("Start tracking")
+                        }
                     }
                 }
             }

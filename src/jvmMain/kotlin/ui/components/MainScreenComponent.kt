@@ -1,5 +1,6 @@
 package ui.components
 
+import State.Companion.globalState
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -44,7 +45,7 @@ class MainScreenComponent {
                         )
 
                         Button(onClick = {
-                            //
+                            globalState.value = "step1"
                         }) {
                             Text("Start tracking")
                         }

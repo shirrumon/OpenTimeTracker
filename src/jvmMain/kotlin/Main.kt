@@ -1,6 +1,7 @@
+import State.Companion.globalState
 import androidx.compose.material.MaterialTheme
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
@@ -16,7 +17,11 @@ fun app() {
     MaterialTheme {
         //generateLoginPage()
         //generateMainScreen()
-        SetupStepsScreen().firstSetupScreen()
+        if(globalState.collectAsState().value == "step1") {
+            SetupStepsScreen().firstSetupScreen()
+        } else {
+            generateMainScreen()
+        }
     }
 }
 
@@ -30,6 +35,10 @@ fun main() = application {
     ) {
         app()
     }
+}
+
+fun dasd() {
+
 }
 
 @Composable
