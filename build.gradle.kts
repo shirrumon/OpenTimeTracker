@@ -1,6 +1,4 @@
-import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("multiplatform")
@@ -23,13 +21,13 @@ kotlin {
         }
         withJava()
     }
-    val material3_version = "1.0.1"
+    val material3Version = "1.1.0-alpha01"
     sourceSets {
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
-                implementation("androidx.compose.material3:material3:$material3_version")
-                implementation("androidx.compose.material3:material3-window-size-class:$material3_version")
+                implementation("androidx.compose.material3:material3:$material3Version")
+                implementation("androidx.compose.material3:material3-window-size-class:$material3Version")
             }
         }
         val jvmTest by getting
