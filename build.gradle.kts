@@ -21,13 +21,12 @@ kotlin {
         }
         withJava()
     }
-    val material3Version = "1.1.0-alpha01"
+    val material3Version = "1.3.0"
     sourceSets {
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
-                implementation("androidx.compose.material3:material3:$material3Version")
-                implementation("androidx.compose.material3:material3-window-size-class:$material3Version")
+                implementation("org.jetbrains.compose.material3:material3-desktop:$material3Version")
             }
         }
         val jvmTest by getting
