@@ -7,20 +7,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import ui.components.setup.LoginFormComponent
 import ui.components.MainScreenComponent
-import ui.screens.SetupStepsScreen
+import ui.components.setup.SetupFirstStep
 
 @Composable
 @Preview
 fun app() {
     MaterialTheme {
-        //generateLoginPage()
-        //generateMainScreen()
-        if(globalState.collectAsState().value == "step1") {
-            SetupStepsScreen().firstSetupScreen()
-        } else {
-            generateMainScreen()
+        when(globalState.collectAsState().value) {
+            "step1" -> SetupFirstStep().drawSetup()
+            "step2" -> generateMainScreen()
+            else -> generateMainScreen()
         }
     }
 }
@@ -37,10 +34,6 @@ fun main() = application {
     }
 }
 
-@Composable
-private fun generateLoginPage() {
-    LoginFormComponent().generateForm()
-}
 
 @Composable
 private fun generateMainScreen() {
