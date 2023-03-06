@@ -37,10 +37,6 @@ fun main() = application {
     }
 }
 
-fun dasd() {
-
-}
-
 @Composable
 private fun generateLoginPage() {
     LoginFormComponent().generateForm()
