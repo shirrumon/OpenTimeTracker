@@ -56,13 +56,31 @@ open class SetupStepsScreen {
                     .width(373.dp)
                     .fillMaxHeight()
             ) {
+                Column(
+                    modifier = Modifier
+                        .padding(top = 35.dp)
+                ) {
+                    Text(
+                        "Setup master",
+                        fontSize = 28.sp,
+                        modifier = Modifier
+                            .padding(bottom = 20.dp)
+                    )
+                    setupStepDescription()
+                }
+
                 setupContentSide()
             }
         }
     }
 
     @Composable
-    open fun setupContentSide() {}
+    open fun setupContentSide() {
+    }
+
+    @Composable
+    open fun setupStepDescription() {}
+
     @Composable
     private fun getClockImage() = painterResource("images/clock.png")
 }
