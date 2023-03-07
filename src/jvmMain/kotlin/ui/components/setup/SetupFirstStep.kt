@@ -8,16 +8,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.sp
 import ui.screens.SetupStepsScreen
 
-class SetupFirstStep: SetupStepsScreen() {
+class SetupFirstStep : SetupStepsScreen() {
     @Composable
     override fun setupContentSide() {
+
+    }
+
+    @Composable
+    override fun setNavigationButtons() {
         Column {
-            Column {
-                Button(onClick = {
-                    globalState.value = "step2"
-                }) {
-                    Text("Start tracking")
-                }
+            Button(onClick = {
+                globalState.value = "step2"
+            }
+            ) {
+                Text("Start tracking")
             }
         }
     }

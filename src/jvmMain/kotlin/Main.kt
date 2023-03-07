@@ -14,7 +14,7 @@ import ui.components.setup.SetupFirstStep
 @Preview
 fun app() {
     MaterialTheme {
-        when(globalState.collectAsState().value) {
+        when (globalState.collectAsState().value) {
             "step1" -> SetupFirstStep().drawSetup()
             "step2" -> generateMainScreen()
             else -> generateMainScreen()

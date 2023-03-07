@@ -70,8 +70,19 @@ open class SetupStepsScreen {
                 }
 
                 setupContentSide()
+
+                Row(
+                    modifier = Modifier
+                        .absoluteOffset(230.dp, 250.dp)
+                ) {
+                    setNavigationButtons()
+                }
             }
         }
+    }
+
+    @Composable
+    open fun setNavigationButtons() {
     }
 
     @Composable
@@ -79,7 +90,8 @@ open class SetupStepsScreen {
     }
 
     @Composable
-    open fun setupStepDescription() {}
+    open fun setupStepDescription() {
+    }
 
     @Composable
     private fun getClockImage() = painterResource("images/clock.png")
