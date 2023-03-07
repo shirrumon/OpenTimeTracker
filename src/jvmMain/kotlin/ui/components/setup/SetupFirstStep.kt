@@ -2,8 +2,7 @@ package ui.components.setup
 
 import State.Companion.globalState
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.sp
 import ui.screens.SetupStepsScreen
@@ -17,9 +16,10 @@ class SetupFirstStep : SetupStepsScreen() {
     @Composable
     override fun setNavigationButtons() {
         Column {
-            Button(onClick = {
-                globalState.value = "step2"
-            }
+            ElevatedButton(
+                onClick = {
+                    globalState.value = "step2"
+                }
             ) {
                 Text("Start tracking")
             }
